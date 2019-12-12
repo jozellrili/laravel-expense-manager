@@ -1,68 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.users.title')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['admin.users.store']]) !!}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">@lang('quickadmin.users.title')</h3>
+    </div>
+    <div class="card-body">
+        {!! Form::open(['method' => 'POST', 'route' => ['admin.users.store']]) !!}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @lang('quickadmin.qa_create')
+            </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            @lang('quickadmin.qa_create')
-        </div>
-        
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('name', trans('quickadmin.users.fields.name').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('name'))
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 form-group">
+                        {!! Form::label('name', trans('quickadmin.users.fields.name').'*', ['class' => 'control-label'])
+                        !!}
+                        {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required'
+                        => '']) !!}
+                        <p class="help-block"></p>
+                        @if($errors->has('name'))
                         <p class="help-block">
                             {{ $errors->first('name') }}
                         </p>
-                    @endif
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('email', trans('quickadmin.users.fields.email').'*', ['class' => 'control-label']) !!}
-                    {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('email'))
+                <div class="row">
+                    <div class="col-xs-12 form-group">
+                        {!! Form::label('email', trans('quickadmin.users.fields.email').'*', ['class' =>
+                        'control-label']) !!}
+                        {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '',
+                        'required' => '']) !!}
+                        <p class="help-block"></p>
+                        @if($errors->has('email'))
                         <p class="help-block">
                             {{ $errors->first('email') }}
                         </p>
-                    @endif
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('password', trans('quickadmin.users.fields.password').'*', ['class' => 'control-label']) !!}
-                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('password'))
+                <div class="row">
+                    <div class="col-xs-12 form-group">
+                        {!! Form::label('password', trans('quickadmin.users.fields.password').'*', ['class' =>
+                        'control-label']) !!}
+                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '', 'required' =>
+                        '']) !!}
+                        <p class="help-block"></p>
+                        @if($errors->has('password'))
                         <p class="help-block">
                             {{ $errors->first('password') }}
                         </p>
-                    @endif
+                        @endif
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('role_id', trans('quickadmin.users.fields.role').'*', ['class' => 'control-label']) !!}
-                    {!! Form::select('role_id', $roles, old('role_id'), ['class' => 'form-control select2', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('role_id'))
+                <div class="row">
+                    <div class="col-xs-12 form-group">
+                        {!! Form::label('role_id', trans('quickadmin.users.fields.role').'*', ['class' =>
+                        'control-label']) !!}
+                        {!! Form::select('role_id', $roles, old('role_id'), ['class' => 'form-control select2',
+                        'required' => '']) !!}
+                        <p class="help-block"></p>
+                        @if($errors->has('role_id'))
                         <p class="help-block">
                             {{ $errors->first('role_id') }}
                         </p>
-                    @endif
+                        @endif
+                    </div>
                 </div>
-            </div>
-            
-        </div>
-    </div>
 
-    {!! Form::submit(trans('quickadmin.qa_save'), ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
+            </div>
+        </div>
+
+        {!! Form::submit(trans('quickadmin.qa_save'), ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
+    </div>
+</div>
 @stop
 
