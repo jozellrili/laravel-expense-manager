@@ -2,7 +2,6 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.users.title')</h3>
-
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('quickadmin.qa_view')
