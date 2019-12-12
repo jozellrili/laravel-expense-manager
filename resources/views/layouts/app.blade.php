@@ -7,45 +7,42 @@
 
 
 <body class="hold-transition skin-blue sidebar-mini">
-
-<div id="wrapper">
-
-@include('partials.topbar')
-@include('partials.sidebar')
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+@include('partials.header')
 
 <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content">
-            @if(isset($siteTitle))
-                <h3 class="page-title">
-                    {{ $siteTitle }}
-                </h3>
-            @endif
+    <div class="app-main">
+        @include('partials.sidebar')
+        <div class="app-main__outer">
+            <div class="app-main__inner">
+                @if(isset($siteTitle))
+                    <h3 class="app-page-title">
+                        {{ $siteTitle }}
+                    </h3>
+                @endif
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (Session::has('message'))
+                            <div class="alert alert-info">
+                                <p>{{ Session::get('message') }}</p>
+                            </div>
+                        @endif
+                        @if ($errors->count() > 0)
+                            <div class="alert alert-danger">
+                                <ul class="list-unstyled">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
-            <div class="row">
-                <div class="col-md-12">
+                        @yield('content')
 
-                    @if (Session::has('message'))
-                        <div class="alert alert-info">
-                            <p>{{ Session::get('message') }}</p>
-                        </div>
-                    @endif
-                    @if ($errors->count() > 0)
-                        <div class="alert alert-danger">
-                            <ul class="list-unstyled">
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    @yield('content')
-
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 
