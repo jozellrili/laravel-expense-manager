@@ -6,8 +6,8 @@
 </head>
 
 <body class="page-header-fixed">
-    <section id="main-container">
-        <div class="container-fluid login-wrapper">
+    <section id="login-container">
+        <div class="login-wrapper">
             @yield('content')
         </div>
     </section>

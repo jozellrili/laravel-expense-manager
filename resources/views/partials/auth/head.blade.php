@@ -20,4 +20,4 @@
 <script src="https://kit.fontawesome.com/f272297db8.js" crossorigin="anonymous"></script>
 
 <link href="{{ url('plugins/architectui/css/main.css') }}" rel="stylesheet">
-<link href="{{ url('css/style.min.css') }}" rel="stylesheet">
+<link href="{{ url('css/style.min.css?t=') . time() }}" rel="stylesheet">

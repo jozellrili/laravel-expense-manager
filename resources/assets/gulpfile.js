@@ -20,7 +20,7 @@ var del = require('del');
 function clean() {
   // You can use multiple globbing patterns as you would with `gulp.src`,
   // for example if you are using del 2.0 or above, return its promise
-  return del(['../../public/dist/css/style.min.css', '../../public/dist/js/all/min.css']);
+  return del(['../../public/css/style.min.css', '../../public/js/all/min.css']);
 }
 
 
