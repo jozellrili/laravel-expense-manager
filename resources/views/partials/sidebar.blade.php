@@ -37,14 +37,14 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li>
-                    <a href="{{ url('/') }}" class="{{ $request->segment(1) == 'home' ? 'mm-active' : '' }}">
+                    <a href="{{ url('/') }}" class="{{ $request->segment(2) == 'home' ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-rocket fas fa-tachometer-alt"></i>
                         @lang('quickadmin.qa_dashboard')
                     </a>
                 </li>
                 @can('user_management_access')
                     <li>
-                        <a href="#">
+                        <a href="#" class="{{ $request->segment(2) == 'roles' || $request->segment(2) == 'users' ? 'mm-active' : '' }}" aria-expanded="{{ $request->segment(2) == 'roles' || $request->segment(2) == 'users' ? 'true' : 'false' }}">
                             <i class="metismenu-icon pe-7s-diamond fas fa-users-cog"></i>
                             @lang('quickadmin.user-management.title')
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left fas fa-angle-left"></i>
@@ -52,7 +52,7 @@
                         <ul>
                             @can('role_access')
                                 <li>
-                                    <a href="{{ route('admin.roles.index') }}">
+                                    <a class="{{ $request->segment(2) == 'roles' ? 'mm-active' : '' }}" href="{{ route('admin.roles.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.roles.title')
                                     </a>
@@ -60,7 +60,7 @@
                             @endcan
                             @can('user_access')
                                 <li>
-                                    <a href="{{ route('admin.users.index') }}">
+                                    <a class="{{ $request->segment(2) == 'users' ? 'mm-active' : '' }}" href="{{ route('admin.users.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.users.title')
                                     </a>
@@ -71,7 +71,7 @@
                 @endcan
                 @can('expense_management_access')
                     <li>
-                        <a href="#">
+                        <a href="#" class="{{ in_array($request->segment(2), ['expense_categories', 'income_categories', 'incomes', 'expenses', 'monthly_reports', 'currencies']) ? 'mm-active' : '' }}">
                             <i class="metismenu-icon pe-7s-car fas fa-money-bill-wave"></i>
                             @lang('quickadmin.expense-management.title')
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left fas fa-angle-left"></i>
@@ -79,7 +79,7 @@
                         <ul>
                             @can('expense_category_access')
                                 <li>
-                                    <a href="{{ route('admin.expense_categories.index') }}">
+                                    <a class="{{ $request->segment(2) == 'expense_categories' ? 'mm-active' : '' }}" href="{{ route('admin.expense_categories.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.expense-category.title')
                                     </a>
@@ -87,39 +87,39 @@
                             @endcan
                             @can('income_category_access')
                                 <li>
-                                    <a href="{{ route('admin.income_categories.index') }}">
+                                    <a class="{{ $request->segment(2) == 'income_categories' ? 'mm-active' : '' }}" href="{{ route('admin.income_categories.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.income-category.title')
                                     </a>
                                 </li>
                             @endcan
                             @can('income_access')
-                                <li class="{{ $request->segment(2) == 'incomes' ? 'active active-sub' : '' }}">
-                                    <a href="{{ route('admin.incomes.index') }}">
+                                <li>
+                                    <a class="{{ $request->segment(2) == 'incomes' ? 'mm-active' : '' }}" href="{{ route('admin.incomes.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.income.title')
                                     </a>
                                 </li>
                             @endcan
                             @can('expense_access')
-                                <li class="{{ $request->segment(2) == 'expenses' ? 'active active-sub' : '' }}">
-                                    <a href="{{ route('admin.expenses.index') }}">
+                                <li>
+                                    <a class="{{ $request->segment(2) == 'expenses' ? 'mm-active' : '' }}" href="{{ route('admin.expenses.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.expense.title')
                                     </a>
                                 </li>
                             @endcan
                             @can('monthly_report_access')
-                                <li class="{{ $request->segment(2) == 'monthly_reports' ? 'active active-sub' : '' }}">
-                                    <a href="{{ route('admin.monthly_reports.index') }}">
+                                <li>
+                                    <a class="{{ $request->segment(2) == 'monthly_reports' ? 'mm-active' : '' }}" href="{{ route('admin.monthly_reports.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.monthly-report.title')
                                     </a>
                                 </li>
                             @endcan
                             @can('currency_access')
-                                <li class="{{ $request->segment(2) == 'currencies' ? 'active active-sub' : '' }}">
-                                    <a href="{{ route('admin.currencies.index') }}">
+                                <li>
+                                    <a class="{{ $request->segment(2) == 'currencies' ? 'mm-active' : '' }}" href="{{ route('admin.currencies.index') }}">
                                         <i class="metismenu-icon"></i>
                                         @lang('quickadmin.currency.title')
                                     </a>
