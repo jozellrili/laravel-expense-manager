@@ -80,9 +80,7 @@
 @section('javascript')
 <script>
     @can('user_delete')
-    window.route_mass_crud_entries_destroy = '{{ route('
-    admin.users.mass_destroy
-    ') }}';
+    window.route_mass_crud_entries_destroy = '{{ route('admin.users.mass_destroy') }}';
     @endcan
 
 </script>
