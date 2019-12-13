@@ -11,6 +11,7 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Ionicons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,600i,700,700i" media="screen" rel="stylesheet" type="text/css">
 <link href="{{ url('plugins/architectui/css/main.css') }}" rel="stylesheet">
 <link href="{{ url('css/style.min.css') }}" rel="stylesheet">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

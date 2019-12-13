@@ -1,38 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">@lang('quickadmin.roles.title')</h3>
-    </div>
-    <div class="card-body">
-        {!! Form::model($role, ['method' => 'PUT', 'route' => ['admin.roles.update', $role->id]]) !!}
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                @lang('quickadmin.qa_edit')
-            </div>
-
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-12 form-group">
-                        {!! Form::label('title', trans('quickadmin.roles.fields.title').'*', ['class' => 'control-label']) !!}
-                        {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                        <p class="help-block"></p>
-                        @if($errors->has('title'))
-                        <p class="help-block">
-                            {{ $errors->first('title') }}
-                        </p>
-                        @endif
-                    </div>
-                </div>
-
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">@lang('quickadmin.roles.title')</h3>
         </div>
-
-        {!! Form::submit(trans('quickadmin.qa_update'), ['class' => 'btn btn-danger']) !!}
-        {!! Form::close() !!}
+        <div class="card-body">
+            <p>@lang('quickadmin.qa_edit') Role:</p>
+            {!! Form::model($role, ['method' => 'PUT', 'route' => ['admin.roles.update', $role->id]]) !!}
+            <div class="form-group">
+                {!! Form::label('title', trans('quickadmin.roles.fields.title').'*', ['class' => '']) !!}
+                {!! Form::text('title', old('title'), ['class' => 'form-control form-control-sm', 'placeholder' => '', 'required' => '']) !!}
+                @if($errors->has('title'))
+                    <p class="help-block text-danger">
+                        {{ $errors->first('title') }}
+                    </p>
+                @endif
+            </div>
+            <div class="position-relative">
+                <a href="{{ route('admin.roles.index') }}" class="btn btn-light btn-sm">
+                    <i class="fas fa-angle-double-left"></i>
+                    @lang('quickadmin.qa_back_to_list')
+                </a>
+                {!! Form::submit(trans('quickadmin.qa_update'), ['class' => 'btn btn-primary btn-sm']) !!}
+            </div>
+            {!! Form::close() !!}
+        </div>
     </div>
-</div>
 @stop
 
