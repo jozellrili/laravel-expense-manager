@@ -14,9 +14,9 @@
             @if(!is_null(Auth::getUser()->role_id) && config('quickadmin.can_see_all_records_role_id') ==
             Auth::getUser()->role_id)
             @if(Session::get('Income.filter', 'all') == 'my')
-            <a href="?filter=all" class="btn btn-default">Show all records</a>
+            <a href="?filter=all" class="btn btn-light">Show all records</a>
             @else
-            <a href="?filter=my" class="btn btn-default">Filter my records</a>
+            <a href="?filter=my" class="btn btn-light">Filter my records</a>
             @endif
             @endif
         </p>
@@ -58,10 +58,10 @@
                         </td>
                         <td>
                             @can('income_view')
-                            <a href="{{ route('admin.incomes.show',[$income->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                            <a href="{{ route('admin.incomes.show',[$income->id]) }}" class="btn btn-sm btn-primary">@lang('quickadmin.qa_view')</a>
                             @endcan
                             @can('income_edit')
-                            <a href="{{ route('admin.incomes.edit',[$income->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                            <a href="{{ route('admin.incomes.edit',[$income->id]) }}" class="btn btn-sm btn-info">@lang('quickadmin.qa_edit')</a>
                             @endcan
                             @can('income_delete')
                             {!! Form::open(array(
@@ -69,7 +69,7 @@
                             'method' => 'DELETE',
                             'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
                             'route' => ['admin.incomes.destroy', $income->id])) !!}
-                            {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger'))
+                            {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-sm btn-danger'))
                             !!}
                             {!! Form::close() !!}
                             @endcan

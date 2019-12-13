@@ -56,10 +56,10 @@
                                 <td field-key='created_by'>{{ $income->created_by->name or '' }}</td>
                                 <td>
                                     @can('view')
-                                    <a href="{{ route('incomes.show',[$income->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                                    <a href="{{ route('incomes.show',[$income->id]) }}" class="btn btn-sm btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('edit')
-                                    <a href="{{ route('incomes.edit',[$income->id]) }}" class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                    <a href="{{ route('incomes.edit',[$income->id]) }}" class="btn btn-sm btn-info">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('delete')
                                     {!! Form::open(array(
@@ -67,7 +67,7 @@
                                     'method' => 'DELETE',
                                     'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
                                     'route' => ['incomes.destroy', $income->id])) !!}
-                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs
+                                    {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-sm
                                     btn-danger')) !!}
                                     {!! Form::close() !!}
                                     @endcan
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <p>&nbsp;</p>
-                <a href="{{ route('admin.income_categories.index') }}" class="btn btn-default">@lang('quickadmin.qa_back_to_list')</a>
+                <a href="{{ route('admin.income_categories.index') }}" class="btn btn-light">@lang('quickadmin.qa_back_to_list')</a>
             </div>
         </div>
     </div>

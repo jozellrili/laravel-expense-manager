@@ -36,11 +36,11 @@
                                 <td>
                                     @can('role_view')
                                         <a href="{{ route('admin.roles.show',[$role->id]) }}"
-                                           class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                                           class="btn btn-sm btn-primary">@lang('quickadmin.qa_view')</a>
                                     @endcan
                                     @can('role_edit')
                                         <a href="{{ route('admin.roles.edit',[$role->id]) }}"
-                                           class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                                           class="btn btn-sm btn-info">@lang('quickadmin.qa_edit')</a>
                                     @endcan
                                     @can('role_delete')
                                         {!! Form::open(array(
@@ -48,7 +48,7 @@
                                                                                 'method' => 'DELETE',
                                                                                 'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
                                                                                 'route' => ['admin.roles.destroy', $role->id])) !!}
-                                        {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                        {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-sm btn-danger')) !!}
                                         {!! Form::close() !!}
                                     @endcan
                                 </td>

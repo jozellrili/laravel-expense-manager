@@ -38,7 +38,7 @@
                 </div>
                 <p>&nbsp;</p>
                 <a href="{{ route('admin.incomes.index') }}"
-                   class="btn btn-default">@lang('quickadmin.qa_back_to_list')</a>
+                   class="btn btn-light">@lang('quickadmin.qa_back_to_list')</a>
             </div>
         </div>
     </div>

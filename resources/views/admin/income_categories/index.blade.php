@@ -42,11 +42,11 @@
                         <td>
                             @can('income_category_view')
                             <a href="{{ route('admin.income_categories.show',[$income_category->id]) }}"
-                               class="btn btn-xs btn-primary">@lang('quickadmin.qa_view')</a>
+                               class="btn btn-sm btn-primary">@lang('quickadmin.qa_view')</a>
                             @endcan
                             @can('income_category_edit')
                             <a href="{{ route('admin.income_categories.edit',[$income_category->id]) }}"
-                               class="btn btn-xs btn-info">@lang('quickadmin.qa_edit')</a>
+                               class="btn btn-sm btn-info">@lang('quickadmin.qa_edit')</a>
                             @endcan
                             @can('income_category_delete')
                             {!! Form::open(array(
@@ -54,7 +54,7 @@
                             'method' => 'DELETE',
                             'onsubmit' => "return confirm('".trans("quickadmin.qa_are_you_sure")."');",
                             'route' => ['admin.income_categories.destroy', $income_category->id])) !!}
-                            {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-xs btn-danger'))
+                            {!! Form::submit(trans('quickadmin.qa_delete'), array('class' => 'btn btn-sm btn-danger'))
                             !!}
                             {!! Form::close() !!}
                             @endcan
