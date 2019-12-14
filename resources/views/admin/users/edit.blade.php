@@ -4,10 +4,10 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">@lang('quickadmin.users.title')</h3>
+            <p class="badge-pill badge-info text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_edit')</p>
         </div>
         <div class="card-body">
             {!! Form::model($user, ['method' => 'PUT', 'route' => ['admin.users.update', $user->id]]) !!}
-            <p>@lang('quickadmin.qa_edit') User:</p>
             <div class="position-relative form-group">
                 {!! Form::label('name', trans('quickadmin.users.fields.name').'*', ['class' => ''])
                 !!}

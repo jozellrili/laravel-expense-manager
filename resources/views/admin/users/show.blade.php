@@ -4,13 +4,13 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">@lang('quickadmin.users.title')</h3>
+        <p class="badge-pill badge-success text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_view')</p>
     </div>
     <div class="card-body">
         <div class="panel panel-default">
             <div class="panel-heading">
                 @lang('quickadmin.qa_view')
             </div>
-
             <div class="panel-body table-responsive">
                 <div class="row">
                     <div class="col-md-6">
@@ -31,7 +31,6 @@
                     </div>
                 </div><!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-
                     <li role="presentation" class="active"><a href="#expensecategory" aria-controls="expensecategory"
                                                               role="tab" data-toggle="tab">Expense Categories</a></li>
                     <li role="presentation" class=""><a href="#incomecategory" aria-controls="incomecategory" role="tab"
@@ -324,11 +323,10 @@
                         </table>
                     </div>
                 </div>
-
-                <p>&nbsp;</p>
-
-                <a href="{{ route('admin.users.index') }}"
-                   class="btn btn-light">@lang('quickadmin.qa_back_to_list')</a>
+                <a href="{{ route('admin.users.index') }}"class="btn btn-light btn-sm">
+                    <i class="fas fa-angle-double-left"></i>
+                    @lang('quickadmin.qa_back_to_list')
+                </a>
             </div>
         </div>
     </div>

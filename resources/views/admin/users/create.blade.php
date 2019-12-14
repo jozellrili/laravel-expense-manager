@@ -4,10 +4,10 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">@lang('quickadmin.users.title')</h3>
+            <p class="badge-pill badge-warning text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_create')</p>
         </div>
         <div class="card-body">
             {!! Form::open(['method' => 'POST', 'route' => ['admin.users.store']]) !!}
-            <p>@lang('quickadmin.qa_create') User:</p>
             <div class="position-relative form-group">
                 {!! Form::label('name', trans('quickadmin.users.fields.name').'*', ['class' => 'control-label'])!!}
                 {!! Form::text('name', old('name'), ['class' => 'form-control form-control-sm', 'placeholder' => '', 'required'=> '']) !!}

@@ -4,6 +4,7 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">@lang('quickadmin.roles.title')</h3>
+            <p class="badge-pill badge-success text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_view')</p>
         </div>
         <div class="card-body">
             <div class="panel panel-default">

@@ -4,9 +4,9 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">@lang('quickadmin.roles.title')</h3>
+            <p class="badge-pill badge-warning text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_create')</p>
         </div>
         <div class="card-body">
-            <p>@lang('quickadmin.qa_add_new') Role:</p>
             {!! Form::open(['method' => 'POST', 'route' => ['admin.roles.store']]) !!}
             <div class="position-relative form-group">
                 {!! Form::label('title', trans('quickadmin.roles.fields.title').'*', ['class' => '']) !!}

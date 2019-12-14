@@ -4,9 +4,9 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">@lang('quickadmin.roles.title')</h3>
+            <p class="badge-pill badge-info text-lowercase ml-1 mt-1 small">@lang('quickadmin.qa_edit')</p>
         </div>
         <div class="card-body">
-            <p>@lang('quickadmin.qa_edit') Role:</p>
             {!! Form::model($role, ['method' => 'PUT', 'route' => ['admin.roles.update', $role->id]]) !!}
             <div class="form-group">
                 {!! Form::label('title', trans('quickadmin.roles.fields.title').'*', ['class' => '']) !!}
